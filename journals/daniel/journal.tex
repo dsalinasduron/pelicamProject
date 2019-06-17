@@ -1,6 +1,13 @@
-\documentclass{article}
-\usepackage{times}
-\begin{document} 
-\section{title}
-ada lovelace
+\documentclass{tufte-book}
+
+\title{Pelicam Project}
+\author{Daniel Salinas Duron}
+\begin{document}
+\maketitle 
+
+\frontmatter
+
+\input{btf.tex} \\
+{\catcode`\%=12 \input{|"stat -f '%Sm' btf.tex"}}
+
 \end{document}
