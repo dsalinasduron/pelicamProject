@@ -1,5 +1,6 @@
 \documentclass{tufte-book}
-
+\usepackage{tikz}
+\usetikzlibrary{positioning}
 \title{Pelicam Project}
 \author{Daniel Salinas Duron}
 \begin{document}
@@ -7,7 +8,7 @@
 
 \frontmatter
 
-\input{btf.tex} \\
+\input{btf.tex}
 {\catcode`\%=12 \input{|"stat -f '%Sm' btf.tex"}}
 
 \end{document}

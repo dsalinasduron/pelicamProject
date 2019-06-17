@@ -15,6 +15,37 @@ local section, and, when all of their opinions are composed, the final image
 (or a labeled final image?)  that is consistent between all experts is
 (re)generated.
 
+\newcommand{\yslant}{0.5}
+\newcommand{\xslant}{-0.6}
+\begin{marginfigure}
+\begin{tikzpicture}[scale=1.1,every node/.style={minimum size=1cm},on grid]
+	\begin{scope}[
+		every node/.append style={yslant=\yslant,xslant=\xslant},
+		yslant=\yslant,xslant=\xslant
+	] 
+		% The frame:
+		\draw[black, dashed, thin] (0,0) rectangle (2.5,2); 
+		\node [anchor=south west](expertP) at (0,0)
+		{\includegraphics[width=0.5\linewidth]{img/pelicansEp.jpg}};
+		\draw[black, dashed, thin] (2.6,0) rectangle (5.1,2); 
+		\node[anchor=south west](expertT) at (2.6,0)
+		{\includegraphics[width=0.5\linewidth]{img/pelicansEt.jpg}};
+	\end{scope}
+	\begin{scope}[
+		yshift=-80,
+		every node/.append style={yslant=\yslant,xslant=\xslant},
+		yslant=\yslant,xslant=\xslant
+	] 
+		% The frame:
+		\draw[black, dashed, thin] (1.1,0) rectangle (3.6,2); 
+		\node[anchor=south west] (both) at
+		(1.1,0){\includegraphics[width=0.5\linewidth]{img/pelicansB.jpg}};
+	\end{scope}
+	\draw (expertT) -- node[near end, left] {merge} (both) ; 
+	\draw (expertP) -- (both) ; 
+\end{tikzpicture}
+\end{marginfigure}
+
 An intuitive example can be thought of by having two experts: a topographic
 expert and a pelican expert. The topographic expert has learned to recognize
 the beach, and can match parts of the image to a 3D model of the beach. The
@@ -28,6 +59,7 @@ between experts. If the beach expert strongly believes that there are parts of
 the beach that the pelican expert weakly believes are pelicans, then pelicans
 will not be identified there. The experts must fill in the gaps left by other
 experts.
+
 
 A relevant question is, if the pelican expert exists, isn't that really all
 that's needed for the project? What is the point of the other experts? There
@@ -66,3 +98,5 @@ One of the open questions is whether all experts will be active on each
 quadrant or not. If we have a pelican pod expert, there is a chance that a
 positive reading on a pod will not be achievable until multiple quadrants have
 been merged.
+
+
