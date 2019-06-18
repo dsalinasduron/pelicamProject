@@ -1,0 +1,72 @@
+\chapter{Notes on TensorFlow Tutorial 1}
+These are notes I made while going through the TensorFlow tutorial:
+\begin{itemize} 
+	\item
+	\url{https://www.tensorflow.org/tutorials/keras/basic_classification}
+\end{itemize}
+\begin{enumerate} 
+	\item  Jack Wilburn has trained a classifier on pelicans in the picture
+	or not in the picture. Can this be reused to count pelicans just by
+	chopping up the image and verifying whether each piece has a pelican or
+	not? The data set can be augmented by chopping it up and having pieces
+	with one, two, or three pelicans, etc.
+
+	The augmentation process might be hard to automate. Run a loop, that chops up
+	images and feeds them to the classifier. Finding pelican "regions"
+	might be easy, but splitting the regions into individual pelicans might
+	require some kind of edge detection, etc.
+
+	\item  Labels are integers. Assuming we're dealing with a continuous
+	function from images to labels, is it possible that reshuffling labels,
+	i.e. making dresses and tshirts have adjacent lables, could improve
+	performance?
+
+	\item What's the distribution of training and testing labels?
+
+	\item From the example, it doesn't seem like there's flexibility in
+	terms of the size of the input arrays.
+
+	\item How does unraveling the images into a one-dimensional array
+	affect the sucess of the training? It seems to me that we lose the
+	relationship between row-adjacent pixels but not column-adjacent
+	ones. However, I can also see this not being important since there's
+	no intrinsic closeness between a x and y axis versus a x and z axis.
+	However, I think somehow it might make the network more intuitively
+	``compressible''. My guess is that there's some correlation between the
+	weights of adjacent neurons.
+
+	\item While a wide enough network may learn, ResNet 18 or some other
+	architecture might be a bit more successful for our own project. I
+	think this might be the case since there are probably some
+	transformations (such as rotation, lighting, etc) that need to be
+	accounted for. What I would like to happen is for the bottom layer to
+	be wider (account for changes in lighting, etc. with different neurons)
+	and then the upper layers to be a bit narrower, ``forcing'' a more
+	general concept to be mapped to different transformations.
+
+	\item Are dense layers fully connected to the preceding ones or the
+	succeeding ones? My guess is the preceding, since it seems that you can
+	add layers without assuming a next layer. Even the flatten layer seems
+	to assume an input layer.
+
+	\item According to
+	\url{https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html},
+	crossentropy is a function that heavily penalizes false negatives and
+	false positives that are confident. So my guess is the model will tend
+	to be ``circumspect'', it will not be confident about any one
+	particular label. 
+
+	\item What's the  relationship between metrics and loss? The loss
+	function being minimized is used so that the optimizer know how to
+	change the weights. So are the metrics not used in training at all,
+	just reporting performance?
+
+	\item An epoch is the processing of all images in the data set. The
+	data set doesn't change.  However, the learning rate limits the
+	gradient descent. So, the epoch number controls the
+	overfitting/underfitting of the network.
+
+	\item Got about 50\% accuracy on own computer when I ran the code vs
+	the 80\% on the website.
+
+\end{enumerate}

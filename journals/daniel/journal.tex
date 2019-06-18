@@ -1,5 +1,6 @@
 \documentclass{tufte-book}
 \usepackage{tikz}
+\usepackage{hyperref}
 \usetikzlibrary{positioning}
 \title{Pelicam Project}
 \author{Daniel Salinas Duron}
@@ -10,5 +11,7 @@
 
 \input{btf.tex}
 {\catcode`\%=12 \input{|"stat -f '%Sm' btf.tex"}}
+\input{btf2.tex}
+{\catcode`\%=12 \input{|"stat -f '%Sm' btf2.tex"}}
 
 \end{document}
