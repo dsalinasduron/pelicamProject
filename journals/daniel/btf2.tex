@@ -1,9 +1,14 @@
-\chapter{Notes on TensorFlow Tutorial 1}
-These are notes I made while going through the TensorFlow tutorial:
-\begin{itemize} 
+\chapter{Notes on TensorFlow Tutorials}
+These are notes I made while going through the TensorFlow tutorials:
+\begin{enumerate} 
 	\item
 	\url{https://www.tensorflow.org/tutorials/keras/basic_classification}
-\end{itemize}
+	\label{kerasTutorial}
+	\item 
+	\url{https://developers.google.com/machine-learning/crash-course/ml-intro}
+	\label{mlTutorial}
+\end{enumerate}
+\section{Keras Basic Classification (Tutorial \ref{kerasTutorial})}
 \begin{enumerate} 
 	\item  Jack Wilburn has trained a classifier on pelicans in the picture
 	or not in the picture. Can this be reused to count pelicans just by
@@ -68,5 +73,24 @@ These are notes I made while going through the TensorFlow tutorial:
 
 	\item Got about 50\% accuracy on own computer when I ran the code vs
 	the 80\% on the website.
+\end{enumerate}
+
+\section{Google ML Crash Course (Tutorial \ref{mlTutorial})}
+\begin{enumerate} 
+
+	\item The loss function makes me wonder: if we have an oracle, how can
+	we learn a space of type X? Is there a connection between the topology
+	of a space and the kind of machine learning task? For example, is
+	binary classification learning a space that has two connected
+	components and no edges in between? Or if we allow edges and
+	higher-order simplices, between connected components, does that affect
+	the ML algorithm?
+
+	\item Get the right gradient \emph{on average}. I like that.
+
+	\item The example given on higher $\ell_2$ norm is great. It really
+	demonstrates the impact of outliers, but it also demonstrates the
+	impact of squaring the distance. It's almost as if you're taking the
+	weighted average of the error and weighting the error by its own size.
 
 \end{enumerate}
