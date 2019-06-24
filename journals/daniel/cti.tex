@@ -1,0 +1,95 @@
+\chapter{Notes on Type Hierarchy Investigation}
+
+I read  ``A Category Theoretical Investigation of the Type Hierarchy for
+Heterogeneous Sensor Integration Notes'' \cite{purvine2016category}. It's a lot
+of good work done, providing transformations for data types into concrete
+categories.\footnote{A concrete category is one for which there exists a
+faithful functor to the category of sets.} The categorification of common data
+types is done to streamline the definition of sheaves, functors whose
+destination categories are concrete categories. So, readers will be allowed to
+substitute their own sensor data as long as they conform to basic data types,
+such as a boolean or a random variable.
+
+The underlying assumption of the paper is that the researcher wants to know the
+state of something, and is taking measurements to that purpose. The state of
+that something can be expressed as a set of variables taking some value. The
+measurements are provided by some sensors. So, the goal is to convert the raw
+data from sensors into a set of values; because a sheaf is being used, the data
+from each sensor is at some point combined with data from other sensors. The
+values that the variables take must be expressible as elements of some set.
+The workflow streamlined by this paper is as follows:
+\begin{enumerate}
+	\item Identify data sources as sensors. Sensor is a general concept,
+	just something that produces data, like a newspaper article or a
+	thermometer. Let $S$ be the set of sensors.
+	\item \label{pairStep} Identify the variables that each sensor can
+	inform about. A sensor may convey information about more than one
+	variable. Let $V$ be the set of variables.
+	\item  For each pair $(s_i \in S, v_j \in V)$ identified in step
+	\ref{pairStep}, convert the raw data into an intermediate form. The
+	authors call this an \emph{analytic}. The intermediate form is a bit of
+	an art. It has to be some form that can then be converted to one of the
+	following data types 
+	\begin{itemize} 
+		\item number
+		\item real interval
+		\item ordinal
+		\item partial order
+		\item stochastic process
+		\item random variable
+		\item probability distribution
+		\item measure (mathematical)
+		\item binary relation
+		\item n-ary relation
+		\item boolean
+	\end{itemize}
+	\item Convert the analytic into one of the data types.
+	\item From here on, Purvine et al. provide a conversion from these data
+	types into a category, and furthermore a functor to the category of
+	sets.
+\end{enumerate}
+
+So as far a sheaves (a functor from a posetal category to a concrete category)
+are concerned, all we need to do is specify a domain category, where each
+sensor is a local section and the readings from all sensors form a global
+section. 
+
+Sheaves have been defined from a variety of domains, including
+\begin{itemize} 
+	\item  a topological space\cite{topsheafWolfram},
+	\item a site\cite{siteSheaf}, and
+	\item a posetal category\cite{robinson2017sheaf}.
+\end{itemize}
+
+When defining a sheaf on a topological space, the domain category is one where
+objects are the open sets of the topology, and the morphisms are inclusions
+subset into superset. As far as sensors are concerned, I'm guessing we can
+begin with a simplicial complex, where 0-simplices are sensors and we include a
+$n$-dimensional simplex where $n-1$ simplices agree. For example, if two
+sensors produce analyitics that can be related to the same variable, there
+exists an edge between them.
+
+We apply the Alexandrov topology\footnote{I should caveat this by saying that
+I'm not totally convinced I've interpreted the Alexandrov topology correctly
+yet}, that is we designate as open sets all the upper sets of each simplex. So
+a simplex does not exist in an open set without its star.
+
+The open sets can then, as specified, be designated as objects in a category
+with inclusion morphisms. The restrictions will therefore follow the opposite
+direction of inclusion: we will restrict data from superset to subset.
+
+Now consider two sensors that produce an analytic on the same variable: A and
+B.  The simplex is A, B, and the edge AB. So the upperset of A, $u(A)$, will be
+$\{A,AB\}$. The intersection of $u(A)$ and $u(B)$ is also included as an open
+set and is just the edge $\{AB\}$ (which should be included anyway since
+$u(AB)$ is $\{AB\}$). So we restrict down from the stalk of $u(A)$ onto the
+stalk of $u(AB)$ since $u(AB) \hookrightarrow u(A)$. This is where the magic
+happens. Defining a restriction from both $u(A)$ and $u(B)$ is composing both
+sensors. The sheaf condition\cite{spivak2014category} then allows us to say
+that the union of all open sets (i.e. $\{A,B,AB\}$) has a unique state that can
+be mapped all the way down from the stalk of $\{A,B,AB,\}$ into the stalk of
+$\{AB\}$.
+
+It is my belief that while finding a good merging technique is an interesting
+problem, co-homology will tell us something about the global states and it is
+something I should investigate.
