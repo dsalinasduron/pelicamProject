@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.13)  25 JUN 2019 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.13)  25 JUN 2019 15:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -22,7 +22,8 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (./entry-jake.aux)
+)
+No file entry-jake.aux.
 \openout1 = `entry-jake.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -46,8 +47,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./entry-jake.aux) ) 
 Here is how much of TeX's memory you used:
- 208 strings out of 494923
- 2258 string characters out of 6180742
+ 206 strings out of 494923
+ 2228 string characters out of 6180742
  52045 words of memory out of 5000000
  3607 multiletter control sequences out of 15000+600000
  4604 words of font info for 17 fonts, out of 8000000 for 9000
