@@ -1,2 +1,6 @@
-*.log
-*.aux
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.aux
+.log
