@@ -31,6 +31,12 @@ This will allow us to isolate small parts of images with and without Pelicans, s
 	I spent most of today trying to dig into the server files to find Jack's code so I could try and run it for myself.
 The goal was to get in so I could work on splitting images up into smaller pieces to determine if they contained pelicans. I wasn't able to gain access to any of that, as far as I could find.
 I also did a lot of digging into methods to split images into smaller pieces using cropping or chopping. Almost all the viable solutions and libraries I found were written in python. This isn't an issue since the server has python, the issue is communication between the R code and python code.
-I did find that there is an R package for advanced image processing in R called Magick. This does have the ability to crop, so I will be doing some further reading into this package if we do end up working heavily with R.		
+I did find that there is an R package for advanced image processing in R called Magick. This does have the ability to crop, so I will be doing some further reading into this package if we do end up working heavily with R.
+
+\section{\Large \itshape Entry 6, July 1, 2019}
+So I lost a lot of my journal entries somehow. There is obviosuly quite the large gap so I am going to runthrough what I have done and thought about during that gap up until now.
+The biggest thing I have been doing is trying to get RStudio up and running to create my own version of the code Jack provided. I want to be able to recreate this without copying it directly over.
+\newline
+Another large thing I have been working on that has given me more trouble than I thought is parsing and organizing the Zooniverse entries via a nodeJS script. The language in the sheet changes very frequently which is not ideal, as this language accounts for the object property titles. I also had an issue where it was parsing the entries out of order, so I had to go in an make sure everything was properly ordered. I will be working on making this script have sheets for every animal type spotted, with pelicans and likely humans being the most important.		
 
 \end{document}
