@@ -8,12 +8,14 @@ class getImages :
 	def __enter__(self) :
 		notOpened = []
 		opened = []
+		images = []
 		for f in self.fileNames :
 			try :
-				opened.append(plt.imread(f))
+				images.append(plt.imread(f))
+				opened.append(f)
 			except :
 				notOpened.append(f)
-		return ( opened, notOpened )
+		return ( images, opened, notOpened )
 	def __exit__(self,ExceptionType,ExceptionValue,traceback):
 		if (ExceptionValue) :
 			print(ExceptionType)
@@ -37,19 +39,26 @@ def convolve( convolution, image ) :
 					sX = x + cX
 					sY = y + cY
 					slice = image[x:sX,y:sY,d]
-					result[x,y,d] = numpy.sum(numpy.multiply(convolution,slice))
+					result[x,y,d] = \
+					numpy.sum(numpy.multiply(convolution,slice))
 		return result
 	else :
 		raise Error("Convolution larger than image")
+
+# finds the difference between a point and its neighbors.
+# 
+def neighborDifference(A,directions=[]) :
+	return A - numpy.roll(A,2,1)
 
 # execute if this is the main module
 if __name__ == "__main__" :
 	from sys import argv
 	if ( len(argv) > 1 ) :
 		convolution = numpy.loadtxt(argv[1],delimiter=",")
-		with getImages(argv[2:]) as ( images, failed ) :
+		with getImages(argv[2:]) as ( images, opened, failed ) :
 			for f in failed :
 				print("Could not open " + f)
-			for i in images :
+			for (i,f) in zip(images, opened) :
+				#ci = neighborDifference(i)
 				ci = convolve(convolution,i)
-				plt.imsave("a.jpg",ci)
+				plt.imsave("c_" + f,ci)

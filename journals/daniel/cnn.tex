@@ -1,0 +1,39 @@
+\chapter{On Convolutional Nets}
+
+Notes taken while reading ``An Intuitive Explanation of Convolutional Neural
+Networks''\cite{intuitiveCNN}.
+
+\begin{enumerate}
+	\item What I would like to happen is to use convolutions along with a
+	self-supervised approach. If somehow the convolutions could learn the
+	spread of pelicans. Self-supervised might be a little challenging since
+	either
+	\begin{enumerate}
+		\item we will have only two features in the output layer end
+		(data or not data), or 
+		\item \label{quadLearn} we will have some sort of locality as
+		output (e.g. the input layer learns its neighbors, so maybe
+		quadrant $x$ learns to identify its adjacent quadrants.
+	\end{enumerate}
+	What's difficult is deciding what the output layer should be. Even in
+	case (\ref{quadLearn}), how does learning the adjacent layers help
+	detect pelicans? I like the idea, but maybe there should be two basic
+	kinds of output layer, if the quadrant has a pelican or if the quadrant
+	does not have a pelican.
+
+	However, I really do like the idea of  learning adjacent quadrants. I
+	like this because it is easy to train the network on data/not data.
+	Just feed it randomized quadrants (pixel values). I also like the idea
+	because there has to be some similarity between images of the same
+	landscape. So, we should be getting pretty consistent values of the
+	same quadrant between images.
+
+	\item What I would \emph{really} like to learn is somehow classifying
+	pelicans by how their pods look. Do they have a certain topology?
+
+	\item The justification given for ReLU is that it introduces
+	non-linearity since ``the real-world data we would want ConvNet to
+	learn would be non-linear''. Reasoning seems a little thin. Yes it is
+	nonlinear but no justification for ReLU's actual function is given. My
+		own guess is that 
+\end{enumerate}
