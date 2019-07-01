@@ -1,0 +1,14 @@
+{
+  "name": "pelicam_zooniverse_entry_parser",
+  "version": "1.0.0",
+  "description": "Parses all zooniverse entries for the peliCAM project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jake Wagoner",
+  "license": "ISC",
+  "dependencies": {
+    "xlsx": "^0.14.3"
+  }
+}
