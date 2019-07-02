@@ -1,5 +1,7 @@
 import  matplotlib.pyplot as plt
+from scipy import ndimage
 import numpy
+from glob import glob
 
 # class for loading images safely.
 class getImages :
@@ -23,7 +25,7 @@ class getImages :
 
 # convolution : n by m array
 # image : x by y array, x > n, y > m
-def convolve( convolution, image ) :
+def convolveSlow( convolution, image ) :
 	imX = image.shape[0]
 	imY = image.shape[1]
 	cX = convolution.shape[0]
@@ -54,11 +56,14 @@ def neighborDifference(A,directions=[]) :
 if __name__ == "__main__" :
 	from sys import argv
 	if ( len(argv) > 1 ) :
-		convolution = numpy.loadtxt(argv[1],delimiter=",")
+		convo = numpy.loadtxt(argv[1],delimiter=",")
+		convolution = numpy.array([convo,convo,convo])
 		with getImages(argv[2:]) as ( images, opened, failed ) :
 			for f in failed :
 				print("Could not open " + f)
 			for (i,f) in zip(images, opened) :
-				#ci = neighborDifference(i)
-				ci = convolve(convolution,i)
-				plt.imsave("c_" + f,ci)
+				ci = ndimage.convolve(i,convolution)
+				plt.imshow(ci)
+				plt.show()
+				#ci = convolveSlow(convolution,i)
+				#plt.imsave("c_" + f,ci)
