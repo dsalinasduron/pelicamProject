@@ -34,7 +34,8 @@ for (let i = 0; i < information.length; i++) {
 	          young : "",
 	          howManyYoung : "",
 	          fileName : "",
-	          id : ""
+	          id : "",
+	          camera: ""
 	        };
 
 	        if (n.answers.HOWMANY !== undefined) {
@@ -85,6 +86,12 @@ for (let i = 0; i < information.length; i++) {
 	        obj.id = information[i].subject_ids;
 	        obj.fileName = (JSON.parse(information[i].subject_data)[obj.id].Filename !== undefined) ? JSON.parse(information[i].subject_data)[obj.id].Filename : JSON.parse(information[i].subject_data)[obj.id].image_name_1;
 
+	        if (obj.fileName.includes("sd-g")) {
+	        	obj.camera = "g";
+	        } else if (obj.fileName.includes("sd-f")) {
+	        	obj.camera = "f";
+	        }
+
 	        jsonInfoPelicans.push(obj);
 	    }
 
@@ -97,6 +104,11 @@ for (let i = 0; i < information.length; i++) {
 
         	obj.id = information[i].subject_ids;
 	        obj.fileName = (JSON.parse(information[i].subject_data)[obj.id].Filename !== undefined) ? JSON.parse(information[i].subject_data)[obj.id].Filename : JSON.parse(information[i].subject_data)[obj.id].image_name_1;
+			if (obj.fileName.includes("sd-g")) {
+	        	obj.camera = "g";
+	        } else if (obj.fileName.includes("sd-f")) {
+	        	obj.camera = "f";
+	        }
 
 	        jsonInfoGulls.push(obj);
         }
@@ -110,6 +122,12 @@ for (let i = 0; i < information.length; i++) {
 
 	      	obj.id = information[i].subject_ids;
 	        obj.fileName = (JSON.parse(information[i].subject_data)[obj.id].Filename !== undefined) ? JSON.parse(information[i].subject_data)[obj.id].Filename : JSON.parse(information[i].subject_data)[obj.id].image_name_1;
+	        if (obj.fileName.includes("sd-g")) {
+	        	obj.camera = "g";
+	        } else if (obj.fileName.includes("sd-f")) {
+	        	obj.camera = "f";
+	        }
+
 
 	        jsonInfoHumans.push(obj);
         }
@@ -123,6 +141,11 @@ for (let i = 0; i < information.length; i++) {
 
         	obj.id = information[i].subject_ids;
 	        obj.fileName = (JSON.parse(information[i].subject_data)[obj.id].Filename !== undefined) ? JSON.parse(information[i].subject_data)[obj.id].Filename : JSON.parse(information[i].subject_data)[obj.id].image_name_1;
+	        if (obj.fileName.includes("sd-g")) {
+	        	obj.camera = "g";
+	        } else if (obj.fileName.includes("sd-f")) {
+	        	obj.camera = "f";
+	        }
 
 	        jsonInfoPeregrineFalcons.push(obj);
         }
@@ -136,6 +159,11 @@ for (let i = 0; i < information.length; i++) {
 
         	obj.id = information[i].subject_ids;
 	        obj.fileName = (JSON.parse(information[i].subject_data)[obj.id].Filename !== undefined) ? JSON.parse(information[i].subject_data)[obj.id].Filename : JSON.parse(information[i].subject_data)[obj.id].image_name_1;
+	        if (obj.fileName.includes("sd-g")) {
+	        	obj.camera = "g";
+	        } else if (obj.fileName.includes("sd-f")) {
+	        	obj.camera = "f";
+	        }
 
 	        jsonInfoGoldenEagles.push(obj);
         }
@@ -149,6 +177,11 @@ for (let i = 0; i < information.length; i++) {
 
         	obj.id = information[i].subject_ids;
 	        obj.fileName = (JSON.parse(information[i].subject_data)[obj.id].Filename !== undefined) ? JSON.parse(information[i].subject_data)[obj.id].Filename : JSON.parse(information[i].subject_data)[obj.id].image_name_1;
+	        if (obj.fileName.includes("sd-g")) {
+	        	obj.camera = "g";
+	        } else if (obj.fileName.includes("sd-f")) {
+	        	obj.camera = "f";
+	        }
 
 	        jsonInfoGreatBlueHerons.push(obj);
         }
@@ -162,6 +195,11 @@ for (let i = 0; i < information.length; i++) {
 
         	obj.id = information[i].subject_ids;
 	        obj.fileName = (JSON.parse(information[i].subject_data)[obj.id].Filename !== undefined) ? JSON.parse(information[i].subject_data)[obj.id].Filename : JSON.parse(information[i].subject_data)[obj.id].image_name_1;
+	        if (obj.fileName.includes("sd-g")) {
+	        	obj.camera = "g";
+	        } else if (obj.fileName.includes("sd-f")) {
+	        	obj.camera = "f";
+	        }
 
 	        jsonInfoCoyotes.push(obj);
         }
@@ -175,6 +213,11 @@ for (let i = 0; i < information.length; i++) {
 
         	obj.id = information[i].subject_ids;
 	        obj.fileName = (JSON.parse(information[i].subject_data)[obj.id].Filename !== undefined) ? JSON.parse(information[i].subject_data)[obj.id].Filename : JSON.parse(information[i].subject_data)[obj.id].image_name_1;
+	        if (obj.fileName.includes("sd-g")) {
+	        	obj.camera = "g";
+	        } else if (obj.fileName.includes("sd-f")) {
+	        	obj.camera = "f";
+	        }
 
 	        jsonInfoTurkeyVultures.push(obj);
         }
@@ -188,6 +231,11 @@ for (let i = 0; i < information.length; i++) {
 
         	obj.id = information[i].subject_ids;
 	        obj.fileName = (JSON.parse(information[i].subject_data)[obj.id].Filename !== undefined) ? JSON.parse(information[i].subject_data)[obj.id].Filename : JSON.parse(information[i].subject_data)[obj.id].image_name_1;
+	        if (obj.fileName.includes("sd-g")) {
+	        	obj.camera = "g";
+	        } else if (obj.fileName.includes("sd-f")) {
+	        	obj.camera = "f";
+	        }
 
 	        jsonInfoGreatHornedOwls.push(obj);
         }
@@ -201,6 +249,11 @@ for (let i = 0; i < information.length; i++) {
 
         	obj.id = information[i].subject_ids;
 	        obj.fileName = (JSON.parse(information[i].subject_data)[obj.id].Filename !== undefined) ? JSON.parse(information[i].subject_data)[obj.id].Filename : JSON.parse(information[i].subject_data)[obj.id].image_name_1;
+	        if (obj.fileName.includes("sd-g")) {
+	        	obj.camera = "g";
+	        } else if (obj.fileName.includes("sd-f")) {
+	        	obj.camera = "f";
+	        }
 
 	        jsonInfoGeneralRodents.push(obj);
         }
