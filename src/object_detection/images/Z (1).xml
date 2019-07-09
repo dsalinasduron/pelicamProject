@@ -1,0 +1,26 @@
+<annotation>
+	<folder>pelicam-training</folder>
+	<filename>Z (1).jpeg</filename>
+	<path>/Users/Calvin/Downloads/pelicam-training/Z (1).jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>104</width>
+		<height>104</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>pelican</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>18</xmin>
+			<ymin>17</ymin>
+			<xmax>77</xmax>
+			<ymax>102</ymax>
+		</bndbox>
+	</object>
+</annotation>

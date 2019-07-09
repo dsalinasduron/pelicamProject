@@ -1,0 +1,38 @@
+<annotation>
+	<folder>pelicam-training</folder>
+	<filename>images (73).jpeg</filename>
+	<path>/Users/Calvin/Downloads/pelicam-training/images (73).jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>225</width>
+		<height>225</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>pelican</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>3</xmin>
+			<ymin>37</ymin>
+			<xmax>169</xmax>
+			<ymax>222</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>pelican</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>65</xmin>
+			<ymin>6</ymin>
+			<xmax>194</xmax>
+			<ymax>206</ymax>
+		</bndbox>
+	</object>
+</annotation>
