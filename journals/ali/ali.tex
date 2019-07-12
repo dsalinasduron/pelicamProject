@@ -55,4 +55,33 @@ nothing much going on. just another meeting. but turns out Calvin is doing exact
 \section{6/28/19}
 as of right now I haven’t done much. I am just logging my hours and writing what was missing from my journal. But I will start looking at tutorials and papers and GitHub repositories to understand how a R-CNN architecture looks like and works.
 
+\section{7/1/19}
+I continue to read the website explaining the basics of R-CNN, Fast R-CNN and Faster R-CNN which then goes in depth on explaining the benefits and down sides of using each and compares them. I also started the coding part. It doesn’t seem like there is much I have to do I downloaded the basic Faster R-CNN files from a GitHub repository, and I have to parse the data into the correct format in order to feed into the code. But that is the problem I didn’t think I would encounter. I don’t know how to turn xml files to csv.
+
+\section{7/2/19}
+Today in the meeting I presented my lack of major progress in the coding section of the Faster R-CNN tutorial. Then I started looking into how to take data from a text file and multiple xml files and turn it into a csv file and started taking major steps. It was painful but I did it. 
+
+\section{7/3/19}
+More improvement on the coding side. I am close to running the code to let my laptop learn the pictures. Turns out the author of the blog is a true asshole. He made me take all the data and turn it into csv in order to later on turn the same csv and turn it into a text file. Again, very painful. I also attended a one of the summer undergraduate research programs talks. it was about grad school.
+
+\section{7/4/19}
+In the spirit of patriotism I refuse to work on the 4th of July. I will just sit on a couch and not drink beer cuz im 20 years old
+
+\section{7/7/19}
+I am ready to let my laptop learn the data. But there is another option too. the author has provided their learned weights so I will not train my laptop on anything. I will just take their weights and try it to see how it does. Spoiler alert. It does shit. It really underestimates how many red blood cells there are. And worse, it is confusing the red blood cells and white blood cells with each other
+
+\section{7/8/19}
+After the fuckup by the provided weights by the author I decided to run my own training code to give me my own weights. There are problems I have to solve like package versions and python versions again. And some changes to the code to find the correct folders but now the code is ready to run, and it is will take a shit load of time to finish.
+
+\section{7/9/19}
+I ran the training code for a bit last night, but it was too heavy, and I did not want to leave my laptop to be open and running all night so I quit the program. Today in the morning I ran it again and it finished the first of 500 epochs in the middle of the meeting, 5 hours after I started the training. The weights came in and I tried it. It seems way much better that the dude’s weights. It can identify all the red blood cells does not mess the labels.
+
+\section{7/10/19}
+Today I changes the codes so after running it gives me a text file showing the object counts for each of the pictures. And I also created a text file for the real results of the testing pictures. Seems like my code is overestimating the number of blood cells by about 7 or 8. Am not impressed
+
+\section{7/11/19}
+in the meeting I showcase my results and the comparison and we talk about how we can improve it. maybe change the CNN levels a bit. I should not run the code on myown laptop either because it the gpu sucks and takes way longer than it should to run a code.
+
+
+
 \end{document}
